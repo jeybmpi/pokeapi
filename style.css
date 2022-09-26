@@ -183,3 +183,9 @@ body {
         display: none;
     }
 }
+
+.type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

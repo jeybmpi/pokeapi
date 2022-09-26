@@ -2,7 +2,6 @@ import { getDataUnique, getInfo } from "./scripts/process.js";
 import { printPokemons } from "./scripts/ui.js";
 
 
-
 const mainFunction = async () => {
     let data = await getInfo();
     let responseInfo = [];
