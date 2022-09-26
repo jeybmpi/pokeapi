@@ -38,9 +38,18 @@ body {
 }
 #search{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
 }
+.boxSearch{
+    border-radius: 6px;
+    border: none;
+}
+.busqueda1{
+    height: 15px;
+    width: 15px;
+}
+
 
 .main-container {
     display: flex;
