@@ -41,7 +41,7 @@ body {
     justify-content: flex-end;
     width: 100%;
 }
-.boxSearch{
+#boxSearch{
     border-radius: 6px;
     border: none;
 }
