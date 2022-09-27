@@ -1,21 +1,19 @@
 const containerPokemons = document.getElementById('main-container');
 
 export const printPokemons = (listPokemons) => {
-    console.log(listPokemons)
     containerPokemons.innerHTML = '';
     listPokemons.forEach(pokemon => {
         const {info} = pokemon;
         const {abilities, height, types, sprites,base_experience, id, weight} = info;
-        console.log(`${sprites.back_default}`);
+        console.log(info);
         let TYPE = '';
         types.forEach(element=>{
             TYPE += `<span class="info-text">${element.type.name}</span>`;
-        }) 
+        });
         let HABILITIES = '';
         abilities.forEach(element=>{
             HABILITIES += `<span class="info-text type">${element.ability.name}</span>`;
-        }) 
-        console.log(HABILITIES);
+        });
         containerPokemons.innerHTML += `
         <section class="charizard-container">
             <div class="title">
@@ -62,4 +60,10 @@ export const printPokemons = (listPokemons) => {
         </article>
         `
     });
+};
+
+export const printPokemon = (pokemon) =>{
+    console.log(pokemon);
+    const use = pokemon[0];
+    console.log(use);
 }

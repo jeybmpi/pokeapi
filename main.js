@@ -1,27 +1,27 @@
 import { getDataUnique, getInfo } from "./scripts/process.js";
-import { printPokemons } from "./scripts/ui.js";
+import { printPokemons, printPokemon } from "./scripts/ui.js";
 
 
-const mainFunction = async () => {
-    let data = await getInfo();
-    let responseInfo = [];
-    data.forEach(element => {
-        let infoPokemons = getDataUnique(element.url);
-        responseInfo.push(infoPokemons)       
+document.addEventListener("click", async ({ target }) =>{
+    let name = target.getAttribute('name');
+    const URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
+    let getData = await getDataUnique(URL);
+    const  {results}  = getData;
+    let urlPokemons = [];
+    results.forEach(element => {
+        let infoUrl = getDataUnique(element.url);
+        urlPokemons.push(infoUrl);      
     });
+    const newResponse = await Promise.all(urlPokemons);
 
-    const newResponse = await Promise.all(responseInfo);
+    results.forEach((_, index) => {
+        results[index].info = newResponse[index];
+    });    
 
-    data.forEach((_, index) => {
-        data[index].info = newResponse[index];
-    })
-    // printPokemons(data);
-    let pokemonName = 'charizard';
-    let pokemonPointed = data.find(element => element.name==='charizard')
+    let pokemonPointed = results.find(element => element.name===name);
+    console.log(pokemonPointed);
     let arrayPokemon = [];
-    arrayPokemon.push(pokemonPointed)
+    arrayPokemon.push(pokemonPointed);
     console.log(arrayPokemon);
-    printPokemons(arrayPokemon);
-}
-
-mainFunction();
+    printPokemons(arrayPokemon);  
+});
