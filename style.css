@@ -51,7 +51,7 @@ body {
 }
 
 
-.main-container {
+#main-container {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -119,7 +119,7 @@ body {
     font-weight: bolder;
 }
 
-.footer-content {
+#footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,25 +128,25 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
-.footer-content figure img {
+#footer-content figure img {
     width: 100px;
     height: 100px;
     object-fit: contain;
 }
 
-.footer-content figure {
+#footer-content figure {
     padding: 15px;
     background-color: var(--ligthpurple);
     border-radius: 10px;
     margin: 10px;
 }
 
-.footer-content figure:hover {
+#footer-content figure:hover {
     cursor: pointer;
     background-color: var(--purple);
 }
 
-.footer-content div {
+#footer-content div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -182,4 +182,14 @@ body {
     .pokeball{
         display: none;
     }
+}
+
+.type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hidden{
+    visibility: hidden;
+    display: none;
 }
