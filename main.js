@@ -33,47 +33,17 @@ document.addEventListener("click", async ({ target }) =>{
 let boxSearch = document.getElementById('boxSearch');
 let buttonSearch = document.getElementById('busqueda');
 
-
-
-let searchPokemons =[];
-const mainFunction = async () => {
-    let data = await getInfo();
-    // console.log(data)
-    // printFooter(data);
-    let responseInfo = [];
-    
-    searchPokemons.push(data);
-    console.log(searchPokemons[0]);
-    
-      
-    data.forEach(element => {
-        let infoPokemons = getDataUnique(element.url);
-        responseInfo.push(infoPokemons)       
-    });
-
-    const newResponse = await Promise.all(responseInfo);
-
-    data.forEach((_, index) => {
-        data[index].info = newResponse[index];
-    })
-    
-    
-}
-mainFunction();
-
 const buscar = () => {
-    // e.eventpreventDefault();
     let s = boxSearch.value;
     // buscador(s,searchPokemons[0]); 
     let URL = `https://pokeapi.co/api/v2/pokemon/${s}/`;
-    // console.log(URL);
+    console.log(URL);
     pokemonRaro(URL);
   }
 
 let pokemonnuevo = [];
 let pokemonRaro = async(UURL) =>{
     let buscarPokemon = await getDataUnique(UURL);
-    // console.log(buscarPokemon);
     pokemonnuevo.unshift(buscarPokemon);
     console.log(pokemonnuevo)
     pintar(pokemonnuevo);
