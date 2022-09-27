@@ -2,8 +2,7 @@ import { getDataUnique, getInfo } from "./scripts/process.js";
 import { printPokemons, pintar } from "./scripts/ui.js";
 
 
-document.addEventListener("click", async ({ target }) =>{
-    
+document.addEventListener("click", async ({ target }) =>{    
     if(target.classList.contains('fo')){
         let name = target.getAttribute('name');
         const URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
@@ -21,10 +20,8 @@ document.addEventListener("click", async ({ target }) =>{
         });    
     
         let pokemonPointed = results.find(element => element.name===name);
-        // console.log(pokemonPointed);
         let arrayPokemon = [];
         arrayPokemon.push(pokemonPointed);
-        // console.log(arrayPokemon);
         printPokemons(arrayPokemon); 
     }
      
@@ -35,15 +32,14 @@ let buttonSearch = document.getElementById('busqueda');
 
 const buscar = () => {
     let s = boxSearch.value;
-    // buscador(s,searchPokemons[0]); 
     let URL = `https://pokeapi.co/api/v2/pokemon/${s}/`;
     console.log(URL);
     pokemonRaro(URL);
   }
 
 let pokemonnuevo = [];
-let pokemonRaro = async(UURL) =>{
-    let buscarPokemon = await getDataUnique(UURL);
+let pokemonRaro = async(URL) =>{
+    let buscarPokemon = await getDataUnique(URL);
     pokemonnuevo.unshift(buscarPokemon);
     console.log(pokemonnuevo)
     pintar(pokemonnuevo);
