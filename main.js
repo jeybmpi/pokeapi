@@ -17,8 +17,7 @@ document.addEventListener("click", async ({ target }) =>{
     
         results.forEach((_, index) => {
             results[index].info = newResponse[index];
-        });    
-    
+        });     
         let pokemonPointed = results.find(element => element.name===name);
         let arrayPokemon = [];
         arrayPokemon.push(pokemonPointed);
@@ -35,7 +34,7 @@ const buscar = () => {
     let URL = `https://pokeapi.co/api/v2/pokemon/${s}/`;
     console.log(URL);
     pokemonRaro(URL);
-  }
+};
 
 let pokemonnuevo = [];
 let pokemonRaro = async(URL) =>{
@@ -44,6 +43,5 @@ let pokemonRaro = async(URL) =>{
     console.log(pokemonnuevo)
     pintar(pokemonnuevo);
     console.log(pokemonnuevo);
-}
-
+};
 buttonSearch.addEventListener('click',buscar);
