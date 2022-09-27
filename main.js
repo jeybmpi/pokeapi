@@ -1,5 +1,5 @@
 import { getDataUnique, getInfo } from "./scripts/process.js";
-import { printFooter, pintar } from "./scripts/ui.js";
+import { pintar } from "./scripts/ui.js";
 
 let boxSearch = document.getElementById('boxSearch');
 let buttonSearch = document.getElementById('busqueda');
@@ -10,7 +10,7 @@ let searchPokemons =[];
 const mainFunction = async () => {
     let data = await getInfo();
     console.log(data)
-    printFooter(data);
+    // printFooter(data);
     let responseInfo = [];
     
     searchPokemons.push(data);
