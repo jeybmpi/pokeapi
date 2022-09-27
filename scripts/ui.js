@@ -15,7 +15,7 @@ export const objPrint =(objPokemon)=>{
         <section class="charizard-container">
             <div class="title">
                 <figure>
-                    <img src="${sprites.back_default}">
+                    <img src="${sprites.versions['generation-v']['black-white'].animated.front_default}">
                 </figure>
                 <h2>${(name).toUpperCase()}</h2>
 
